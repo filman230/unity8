@@ -145,7 +145,7 @@ public:
     unity::shell::application::SurfaceManagerInterface *surfaceManager() const { return m_surfaceManager; }
     void setSurfaceManager(unity::shell::application::SurfaceManagerInterface*);
 
-    int nextId() const { return m_nextId.load(); }
+    int nextId() const { return m_nextId.loadRelaxed(); }
 
 public:
     /**
